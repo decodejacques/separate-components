@@ -1,12 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+
+class ElementContent extends React.Component {
+    render() {
+        return (<span>I love Javascript!</span>)
+    }
+}
+
+class ListElement extends React.Component {
+    render() {
+        return (<li><ElementContent></ElementContent></li>)
+    }
+}
+
+class List extends React.Component {
+    render() {
+        return (<ul>
+            <ListElement />
+            <ListElement />
+        </ul>)
+    }
+}
+class App extends React.Component {
+    render() {
+        return (<List></List>)
+    }
+}
 
 ReactDOM.render(<App />, document.getElementById('root'));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
